@@ -3,9 +3,8 @@ let f x = match x with
 |  Some x -> x;;
 
 let incr_opt x = 
-  let x1 = f x 
-  in if (x1 == 0) then
+  if (f x == 0) then
     None
   else
-    Some (x1+1)
+    Some ((f x) + 1)
 ;;
