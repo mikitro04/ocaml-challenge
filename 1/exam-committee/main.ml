@@ -21,11 +21,14 @@ let decide_exam (a : vote) (b: vote) (c : vote) : bool =
 ;;
 
 
-assert (decide_exam WeakReject WeakAccept StrongAccept = true);;
-assert (decide_exam StrongReject WeakAccept StrongAccept = false);;
-assert (decide_exam WeakAccept WeakAccept StrongAccept = true);;
-assert (decide_exam WeakReject WeakReject WeakAccept = false);;
-assert (decide_exam WeakReject StrongReject WeakReject = false);;
+assert (decide_exam StrongAccept WeakAccept WeakReject = true);;
+assert (decide_exam WeakAccept StrongAccept StrongReject = false);;
+assert (decide_exam WeakAccept StrongAccept WeakReject = true);;
+assert (decide_exam StrongReject WeakAccept WeakAccept = false);;
+assert (decide_exam WeakAccept StrongReject WeakAccept = false);;
+assert (decide_exam WeakAccept WeakAccept StrongReject = false);;
+assert (decide_exam WeakAccept WeakAccept WeakReject = true);;
+assert (decide_exam WeakReject WeakReject WeakReject = false);;
+assert (decide_exam StrongReject StrongReject StrongReject = false);;
+assert (decide_exam StrongAccept StrongAccept StrongAccept = true);;
 assert (decide_exam WeakAccept WeakAccept WeakAccept = true);;
-assert (decide_exam StrongAccept StrongReject StrongAccept = false);;
-assert (decide_exam StrongAccept StrongAccept WeakReject = true);;
